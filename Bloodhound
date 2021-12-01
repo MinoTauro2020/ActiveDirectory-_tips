@@ -1,0 +1,10 @@
+MATCH p=shortestPath((c {owned: true})-[*1..3]->(s)) WHERE NOT c = s RETURN p
+MATCH p=shortestPath((c {owned: true})-[*1..]->(s:Computer)) WHERE NOT c = s RETURN p
+MATCH (u:User {dontreqpreauth:true}), (c:Computer), p=shortestPath((u)-[*1..]->(c)) RETURN p
+MATCH (c:Computer {unconstraineddelegation:true}) RETURN c
+MATCH (u:User {owned:true}) RETURN u
+MATCH (u:User {owned:true}), (c:Computer {unconstraineddelegation:true}), p=shortestPath((u)-[*1..]->(c)) RETURN p
+MATCH (c:Computer), (t:Computer), p=((c)-[:AllowedToDelegate]->(t)) RETURN p
+MATCH (u:User {owned:true}), (c:Computer {name: "SRV-2.CHILD.REDTEAMOPS.LOCAL"}), p=shortestPath((u)-[*1..]->(c)) RETURN p
+MATCH p=(u:User)-[:SQLAdmin]->(c:Computer) RETURN p
+MATCH (c:Computer {haslaps: true}) RETURN c
