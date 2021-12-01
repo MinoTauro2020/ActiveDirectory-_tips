@@ -1,0 +1,6 @@
+$env:UserName
+$env:UserDomain
+$env:ComputerName
+$env:CurrentDomain
+%SystemRoot%\NTDS
+%PUBLIC%\Libraries
