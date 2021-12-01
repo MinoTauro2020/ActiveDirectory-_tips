@@ -1,0 +1,25 @@
+Exploits
+-  SeriusSam (https://msandbu.org/serious-sam-cve-2021-36934/) 
+-  
+Misconfigurations
+-  SMBv1
+-  SMBSigned 
+-  GPO
+-  RPC Null Session
+-  LDAP null bind
+-  ACL
+-  Constrained delegation
+-  Backup Operators
+-  PAM (Abusing Privileged Access Management)
+-  Privilege escalation using DNSAdmins
+Kerberos Attack
+-  PTT
+-  Over pass the hash
+-  Golden/Silver Ticket
+-  Skeleton key
+-  Trust Tickets
+-  ntlmrelay
+
+Powershell  bypass security enhancements
+-  AMSI
+- DNS ABUSE
