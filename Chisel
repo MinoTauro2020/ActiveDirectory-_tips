@@ -1,0 +1,4 @@
+./chisel server -p 8081 --reverse .
+chisel.exe client ip:p R:ip socks
+
+https://0xdf.gitlab.io/2020/08/10/tunneling-with-chisel-and-ssf-update.html
