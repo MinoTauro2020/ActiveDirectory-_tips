@@ -1,0 +1,7 @@
+ldapsearch -h 10.10.10.244 -x -s base namingcontexts
+
+ldapsearch -h 10.10.10.244 -x -b "DC=change,DC=me" | grep -i description #-A 22 for username
+
+ldapsearch -h 10.10.10.244 -x -b "DC=change,DC=me" | grep -i service
+
+ldapsearch -x -h 192.168.140.10 -w  -b "dc=cama2,dc=local" "(&(objectCategory=computer)(ms-MCS-AdmPwd=*))" ms-MCS-AdmPwd  
