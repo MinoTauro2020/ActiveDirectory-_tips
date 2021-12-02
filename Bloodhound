@@ -8,3 +8,6 @@ MATCH (c:Computer), (t:Computer), p=((c)-[:AllowedToDelegate]->(t)) RETURN p
 MATCH (u:User {owned:true}), (c:Computer {name: "SRV-2.CHILD.REDTEAMOPS.LOCAL"}), p=shortestPath((u)-[*1..]->(c)) RETURN p
 MATCH p=(u:User)-[:SQLAdmin]->(c:Computer) RETURN p
 MATCH (c:Computer {haslaps: true}) RETURN c
+MATCH (u:User {hasspn:true}) RETURN u
+MATCH (c:Computer), (t:Computer), p=((c)-[:AllowedToDelegate]->(t)) RETURN p
+MATCH (u:User {hasspn:true}), (c:Computer), p=shortestPath((u)-[*1..]->(c)) RETURN p
