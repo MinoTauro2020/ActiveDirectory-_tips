@@ -1,0 +1,42 @@
+Enumerar usuarios
+
+querydispinfo - Obtiene información sobre un equipo y los usuarios que se han conectado a él.
+enumdomusers - Obtiene una lista de todos los usuarios en un dominio.
+queryuser <RID> - Obtiene información sobre un usuario específico.
+queryuseraliases <SID> - Obtiene los alias de un usuario específico.
+Enumerar grupos
+
+querydomgroups - Obtiene una lista de todos los grupos en un dominio.
+querygroup <RID> - Obtiene información sobre un grupo específico.
+Enumerar SID
+
+lookupnames <username> - Obtiene el SID de un usuario específico.
+lsaenumsid - Obtiene una lista de todos los SID en un dominio.
+lookupsids <SID> - Obtiene más información sobre un SID específico.
+Enumerar privilegios
+
+queryprivileges - Obtiene una lista de todos los privilegios en un dominio.
+queryuserprivileges <RID> - Obtiene los privilegios de un usuario específico.
+Otros comandos
+
+querydominfo - Obtiene información sobre un dominio.
+queryinfo - Obtiene información sobre un equipo.
+queryshare - Obtiene información sobre un recurso compartido.
+querysecuritydescriptor - Obtiene información sobre un descriptor de seguridad.
+Aquí hay algunos ejemplos de cómo utilizar estos comandos:
+
+Para enumerar todos los usuarios en el dominio "corp.contoso.com", puede utilizar el siguiente comando:
+
+rpcclient -U Administrator%password -c querydomusers corp.contoso.com
+Para obtener información sobre el usuario "admin" en el dominio "corp.contoso.com", puede utilizar el siguiente comando:
+
+rpcclient -U Administrator%password -c queryuser 500 corp.contoso.com
+Para obtener el SID del usuario "admin" en el dominio "corp.contoso.com", puede utilizar el siguiente comando:
+
+rpcclient -U Administrator%password -c lookupnames admin corp.contoso.com
+Para obtener una lista de todos los SID en el dominio "corp.contoso.com", puede utilizar el siguiente comando:
+
+rpcclient -U Administrator%password -c lsaenumsid corp.contoso.com
+Para obtener los privilegios del usuario "admin" en el dominio "corp.contoso.com", puede utilizar el siguiente comando:
+
+rpcclient -U Administrator%password -c queryuserprivileges 500 corp.contoso.com
